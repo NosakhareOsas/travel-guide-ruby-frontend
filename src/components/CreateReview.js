@@ -58,7 +58,7 @@ function CreateReview({city, getReview}){
             <form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Select aria-label="Default select example" name='user_id' onChange={handleComment}>
-                    <option>TELL US, WHO ARE YOU?</option>
+                    <option>WHO ARE YOU?</option>
                     {options}
                 </Form.Select>
                 <Form.Text className="text-muted">
