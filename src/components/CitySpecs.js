@@ -25,7 +25,7 @@ function CitySpecs (){
             setCity(data)
             setReviews(data.reviews)
         })
-      })
+      },[])
     
     const imgStyle = {
         boxShadow: '1px 2px 9px #282c34',

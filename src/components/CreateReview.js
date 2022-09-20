@@ -6,7 +6,7 @@ import Option from './Option'
 import '../style/App.css';
 
 let baseData = {
-    "user_id": 5,
+    "user_id": 1,
     "city_id": 3
 }
 
@@ -27,7 +27,8 @@ function CreateReview({city, getReview}){
     function handleComment(e){
         let name = e.target.name;
         let value = e.target.value;
-        baseData.city_id = e.target.id
+        baseData.city_id = city.id
+        console.log(baseData.city_id)
         setFormData({...formData, [name]:value})
     }
 
@@ -50,7 +51,7 @@ function CreateReview({city, getReview}){
             }
     }
 
-    const options = users.map((user)=> <Option item={user}/>)
+    const options = users.map((user)=> <Option key={user.id} item={user}/>)
 
     return(
         <Card style={{width: '70%'}}>
@@ -70,7 +71,6 @@ function CreateReview({city, getReview}){
                         onChange={handleComment} 
                         name='comment'
                         style={{ height: '100px' }}
-                        id={`${city.id}`}
                     />
                 </FloatingLabel>
                 <Form.Text className="text-muted">
